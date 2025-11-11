@@ -1,0 +1,65 @@
+/* General setup */
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #87CEEB, #f0f0f0);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+/* Ball styling */
+.ball {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, #ff5757, #c00000);
+  border-radius: 50%;
+  position: relative;
+  animation: bounce 1.2s ease-in-out infinite;
+}
+
+/* Shadow for realism */
+.shadow {
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: shadowScale 1.2s ease-in-out infinite;
+}
+
+/* Bounce keyframes */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  30% {
+    transform: translateY(-250px) scale(1.1, 0.9);
+  }
+  50% {
+    transform: translateY(0) scale(1, 1.1);
+  }
+  70% {
+    transform: translateY(-120px) scale(1.05, 0.95);
+  }
+}
+
+/* Shadow scaling */
+@keyframes shadowScale {
+  0%, 100% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 0.3;
+  }
+  30% {
+    transform: translateX(-50%) scaleX(0.7);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1.2);
+    opacity: 0.25;
+  }
+}
